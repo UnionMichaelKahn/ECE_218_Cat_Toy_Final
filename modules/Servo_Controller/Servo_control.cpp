@@ -4,18 +4,15 @@
 #include "Servo_control.h"
 #include "Servo.h"
 #include "wifi_com.h"
-#include "non_blocking_delay.h"
+
 
 extern int dutyH;
 extern int dutyV;
 char upthenDown[] = "up_then_down ";
 char sidetoside[] = "side_to_side ";
-static nonBlockingDelay_t servoMoveDelay;
-static nonBlockingDelay_t siteMoveDelay;
 
 void servoControlInit(){
    motorInit();
-   nonBlockingDelayInit( &servoMoveDelay, SERVO_TIME_INCREMENT_MS );
 }
 
 
